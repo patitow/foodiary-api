@@ -1,0 +1,46 @@
+{
+  // Enable format on save for consistent code style
+  "editor.formatOnSave": true,
+
+  // Set Prettier as the default formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Enable auto imports and suggestions
+  "typescript.suggest.autoImports": true,
+
+  // Enable strict type checking in TypeScript
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+
+  // Enable code actions on save (like organize imports)
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always",
+    "source.fixAll": "always"
+  },
+
+  // Enable eslint if present
+  "eslint.enable": true,
+  "eslint.validate": ["typescript", "typescriptreact"],
+
+  // Show inline errors and warnings
+  "problems.showCurrentInStatus": true,
+
+  // Enable breadcrumbs for better navigation
+  "breadcrumbs.enabled": true,
+
+  // Enable minimap for quick code overview
+  "editor.minimap.enabled": true,
+
+  // Set tab size and use spaces
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  // Enable quick suggestions
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+
+  // Enable semantic highlighting
+  "editor.semanticHighlighting.enabled": true
+}

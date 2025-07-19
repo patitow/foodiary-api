@@ -1,3 +1,4 @@
 node_modules
 .serverless
 undefined/temp/*
+.env

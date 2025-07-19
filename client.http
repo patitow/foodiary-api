@@ -18,9 +18,17 @@ POST http://localhost:3000/signup
 Content-Type: application/json
 
 {
-  "username": "usuario",
-  "password": "senha",
-  "email": "email@example.com"
+  "goal": "lose",
+  "birthGender": "male",
+  "birthDate": "2000-01-01",
+  "height": 180,
+  "weight": 70,
+  "activityLevel": 3,
+  "account": {
+    "name": "Matheus",
+    "email": "matheus@example.com",
+    "password": "senha1234"
+  }
 }
 
 ### Testar função de signin com erro
@@ -29,6 +37,6 @@ POST http://localhost:3000/signin
 Content-Type: application/json
 
 {
-  "username": "usuario",
+  "email": "matheus@example.com",
   "password": "senha_errada"
 }

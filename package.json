@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx serverless offline start --reloadHandler",
     "package": "npx serverless package",
     "deploy": "npx serverless deploy"
   },
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.152",
     "@types/node": "^24.0.15",
+    "serverless-offline": "^14.4.0",
     "typescript": "^5.8.3"
   }
 }

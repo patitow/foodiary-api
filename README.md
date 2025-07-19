@@ -1,69 +1,53 @@
-<!--
-title: 'AWS Simple HTTP Endpoint example in NodeJS'
-description: 'This template demonstrates how to make a simple HTTP API with Node.js running on AWS Lambda and API Gateway using the Serverless Framework.'
-layout: Doc
-framework: v4
-platform: AWS
-language: nodeJS
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, Inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
+# Foodiary API
 
-# Serverless Framework Node HTTP API on AWS
+Foodiary API é a aplicação backend do projeto Foodiary, desenvolvida utilizando AWS Lambda e API Gateway com o Serverless Framework. Esta API fornece endpoints HTTP para gerenciar e registrar refeições, facilitando a integração com o aplicativo Foodiary.
 
-This template demonstrates how to make a simple HTTP API with Node.js running on AWS Lambda and API Gateway using the Serverless Framework.
+## Funcionalidades
 
-This template does not include any kind of persistence (database). For more advanced examples, check out the [serverless/examples repository](https://github.com/serverless/examples/) which includes Typescript, Mongo, DynamoDB and other examples.
+- Cadastro e consulta de refeições
+- Registro de alimentos consumidos
+- Integração fácil com o frontend Foodiary
+- Deploy automatizado via Serverless CLI
 
-## Usage
+## Pré-requisitos
 
-### Deployment
+- [Node.js](https://nodejs.org/)
+- [Serverless Framework](https://www.serverless.com/framework/docs/getting-started/)
+- Conta AWS configurada (credenciais)
 
-In order to deploy the example, you need to run the following command:
+## Deploy
 
-```
-serverless deploy
+Para fazer o deploy da API, execute:
+
+```bash
+npm run deploy
 ```
 
-After running deploy, you should see output similar to:
+Após o deploy, será exibido o endpoint HTTP gerado pela AWS.
 
-```
-Deploying "serverless-http-api" to stage "dev" (us-east-1)
+## Uso
 
-✔ Service deployed to stack serverless-http-api-dev (91s)
+Você pode acessar os endpoints da API utilizando ferramentas como `curl` ou Postman. Exemplo de requisição:
 
-endpoint: GET - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/
-functions:
-  hello: serverless-http-api-dev-hello (1.6 kB)
+```bash
+curl https://<seu-endpoint>.execute-api.<região>.amazonaws.com/refeicoes
 ```
 
-_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [HTTP API (API Gateway V2) event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api).
+## Desenvolvimento Local
 
-### Invocation
+Para testar e desenvolver localmente, utilize:
 
-After successful deployment, you can call the created application via HTTP:
-
-```
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
+```bash
+npm run dev
 ```
 
-Which should result in response similar to:
+Isso inicia um emulador local das funções Lambda, permitindo testar os endpoints sem necessidade de deploy.
 
-```json
-{ "message": "Go Serverless v4! Your function executed successfully!" }
-```
+## Observações
 
-### Local development
+- Por padrão, a API é pública após o deploy. Para ambientes de produção, configure autenticação e autorização.
+- Consulte a documentação do Serverless Framework para exemplos avançados e integrações com bancos de dados.
 
-The easiest way to develop and test your function is to use the `dev` command:
+---
 
-```
-serverless dev
-```
-
-This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
-
-Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
-
-When you are done developing, don't forget to run `serverless deploy` to deploy the function to the cloud.
+Desenvolvido para o projeto Foodiary durante o JStack Lab.

@@ -1,0 +1,34 @@
+### Testar função de saúde (health)
+
+GET http://localhost:3000/health
+
+### Testar função de signin
+
+POST http://localhost:3000/signin
+Content-Type: application/json
+
+{
+  "username": "usuario",
+  "password": "senha"
+}
+
+### Testar função de signup
+
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+  "username": "usuario",
+  "password": "senha",
+  "email": "email@example.com"
+}
+
+### Testar função de signin com erro
+
+POST http://localhost:3000/signin
+Content-Type: application/json
+
+{
+  "username": "usuario",
+  "password": "senha_errada"
+}
